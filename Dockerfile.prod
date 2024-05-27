@@ -1,0 +1,18 @@
+FROM node:21
+
+ARG BUILD_PROFILE
+
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
+RUN adduser app
+COPY app/ .
+
+RUN npm install
+
+# npm install won't install devDependencies when in production mode
+ENV NODE_ENV=$BUILD_PROFILE
+
+RUN npm run build
+
+RUN chown -R app /opt/app
+USER app
