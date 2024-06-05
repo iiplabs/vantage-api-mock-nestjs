@@ -54,13 +54,6 @@ build/
 # Thumbnails
 ._*
 
-# Application generated files
-/src/main/java/com/vod/asset/content/
-/src/main/java/META-INF/JAXB/
-/src/main/java/playlist/facility/soa/telestream/
-/src/main/resources/static/
-/src/main/resources/templates/
-
 .env
 dist
 .webpack
